@@ -16,7 +16,7 @@ int getsym(string Token, string program)
         {
             i++;
         }
-        if (isalpha(program[i]))
+        if (isalpha(program[i])&&i<program.length())
         {
             while ((isalpha(program[i])||isdigit(program[i]))&&i<program.length())
             {
@@ -52,7 +52,7 @@ int getsym(string Token, string program)
                 printf("Ident(%s)\n",Token.c_str());
             }
         }
-        else if(isdigit(program[i]))
+        else if(isdigit(program[i])&&i<program.length())
         {
             while(isdigit(program[i])&&i<program.length())
             {
@@ -62,7 +62,7 @@ int getsym(string Token, string program)
             int num = atoi(Token.c_str());
             printf("Int(%d)\n",num);
         }
-        else if(program[i] == ':')
+        else if(program[i] == ':'&&i<program.length())
         {
             i++;
             if(program[i] == '=')
@@ -75,32 +75,32 @@ int getsym(string Token, string program)
                 printf("Colon\n");
             }
         }
-        else if(program[i] == '+')
+        else if(program[i] == '+'&&i<program.length())
         {
             i++;
             printf("Plus\n");
         }
-        else if(program[i] == '*')
+        else if(program[i] == '*'&&i<program.length())
         {
             i++;
             printf("Star\n");
         }
-        else if(program[i] == ',')
+        else if(program[i] == ','&&i<program.length())
         {
             i++;
             printf("Comma\n");
         }
-        else if(program[i] == '(')
+        else if(program[i] == '('&&i<program.length())
         {
             i++;
             printf("LParenthesis\n");
         }
-        else if(program[i] == ')')
+        else if(program[i] == ')'&&i<program.length())
         {
             i++;
             printf("RParenthesis\n");
         }
-        else
+        else if(i<program.length())
         {
             printf("Unknown\n");
             return 0;
