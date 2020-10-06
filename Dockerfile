@@ -1,6 +1,6 @@
-FROM ubuntu:16.04
+FROM alpine:3
+RUN apk add cmake gcc g++ libgcc build-base make --no-cache
 WORKDIR /app/
 COPY ./* ./
-RUN apt update && apt-get install g++ cmake gcc libgcc build-base make
-RUN g++ my-program.cpp -o program 
-RUN chmod +x program
+RUN g++ main.cpp -o main
+RUN chmod +x main
