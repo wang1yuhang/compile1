@@ -27,7 +27,7 @@ int getsym(string Token, string program)
             {
                 printf("Begin\n");
             }
-            else if(Token == "End")
+            else if(Token == "END")
             {
                 printf("End\n");
             }
