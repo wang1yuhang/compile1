@@ -23,7 +23,7 @@ int getsym(string Token, string program)
                 Token += program[i];
                 i++;
             }
-            if(Token == "Begin")
+            if(Token == "BEGIN")
             {
                 printf("Begin\n");
             }
@@ -65,7 +65,15 @@ int getsym(string Token, string program)
         else if(program[i] == ':')
         {
             i++;
-            printf("Colon\n");
+            if(program[i] == '=')
+            {
+                i++;
+                printf("Assign\n");
+            }
+            else
+            {
+                printf("Colon\n");
+            }
         }
         else if(program[i] == '+')
         {
